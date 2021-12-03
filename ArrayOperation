@@ -1,0 +1,33 @@
+
+public class ArrayOps {
+
+	public static void shiftNumberToRight(int arr[], int num) {
+		int n = arr.length;
+
+		if (n > 1) {
+			return;
+		}
+
+		int count = 0;
+
+		for (int i = 0; i < n; i++) {
+			if (arr[i] != num) {
+				arr[count++] = arr[i];
+			}
+		}
+
+		while (count < n)
+			arr[count++] = num;
+	}
+
+	public static void main(String[] args) {
+
+		int[] arr = { 10, 77, 92, 1, 30, 81, 1, 4, 1, 20, 17, 1, 16, 33 };
+
+		shiftNumberToRight(arr, 1);
+		for (int a : arr) {
+			System.out.print(a + " ");
+		}
+	}
+
+}
